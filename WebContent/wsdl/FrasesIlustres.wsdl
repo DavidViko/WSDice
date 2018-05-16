@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.formacion.ipartek.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap.formacion.ipartek.com" xmlns:intf="http://soap.formacion.ipartek.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap.formacion.ipartek.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="llenateDeGloria">
+    <complexType/>
+   </element>
+   <element name="llenateDeGloriaResponse">
+    <complexType>
+     <sequence>
+      <element name="llenateDeGloriaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="llenateDeGloriaRequest">
+
+      <wsdl:part element="impl:llenateDeGloria" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="llenateDeGloriaResponse">
+
+      <wsdl:part element="impl:llenateDeGloriaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FrasesIlustres">
+
+      <wsdl:operation name="llenateDeGloria">
+
+         <wsdl:input message="impl:llenateDeGloriaRequest" name="llenateDeGloriaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:llenateDeGloriaResponse" name="llenateDeGloriaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FrasesIlustresSoapBinding" type="impl:FrasesIlustres">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="llenateDeGloria">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="llenateDeGloriaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="llenateDeGloriaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FrasesIlustresService">
+
+      <wsdl:port binding="impl:FrasesIlustresSoapBinding" name="FrasesIlustres">
+
+         <wsdlsoap:address location="http://localhost:8080/WSRajoyDice/services/FrasesIlustres"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
